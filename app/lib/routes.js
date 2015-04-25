@@ -10,3 +10,18 @@ Router.route('/', {
   action: 'action',
   where: 'client'
 });
+
+
+Router.route('rsvp', {
+  name: 'rsvp',
+  controller: 'RsvpController',
+  action: 'action',
+  where: 'client'
+});
+
+Router.route('photos', {
+  name: 'photos',
+  controller: 'PhotosController',
+  action: 'action',
+  where: 'client'
+});
