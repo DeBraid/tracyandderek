@@ -1,4 +1,5 @@
 Rsvps = new Mongo.Collection("rsvps");
+
 Rsvps.attachSchema(new SimpleSchema({
   guests: {
     type: Array,
@@ -15,32 +16,26 @@ Rsvps.attachSchema(new SimpleSchema({
     // placeholder: "foobar",
     max: 200
   },
-   choose: {
-      type: Number,
-      allowedValues: [
-         1,
-         2,
-         3
-      ],
-      optional: true,
-      label: "Number Attending",
-      autoform: {
-         options: [
-            {
-               label: "One",
-               value: 1
-            },
-            {
-               label: "Two",
-               value: 2
-            },
-            {
-               label: "Three+ please leave a note regarding # of children",
-               value: 3
-            }
-         ]
-      }
-   }
+  choose: {
+    type: String,
+    allowedValues: [
+       "one",
+       "two",
+       "three"
+    ],
+    optional: true,
+    label: "Choose a number"
+  },
+  agree: {
+    type: Boolean,
+    label: "Do you have dietary restrictions?",
+    autoform: {
+       type: "boolean-radios",
+       trueLabel: "You bet, meat is murder.",
+       falseLabel: "Nope.  Bring the loins.",
+       value: false
+    }
+  }
 }));
 
 Rsvps.allow({
