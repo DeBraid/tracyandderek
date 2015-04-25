@@ -25,3 +25,10 @@ Router.route('photos', {
   action: 'action',
   where: 'client'
 });
+
+Router.route('map', {
+  name: 'map',
+  controller: 'MapController',
+  action: 'action',
+  where: 'client'
+});
