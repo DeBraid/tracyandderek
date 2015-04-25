@@ -3,3 +3,6 @@
  *  this.ready();
  * });
  */
+Meteor.publish('rsvps', function () {
+  return Rsvps.find();
+});

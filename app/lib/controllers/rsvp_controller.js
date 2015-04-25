@@ -3,7 +3,7 @@ RsvpController = RouteController.extend({
     // set up the subscriptions for the route and optionally
     // wait on them like this:
     //
-    // this.subscribe('item', this.params._id).wait();
+    this.subscribe('rsvps').wait();
     //
     // "Waiting" on a subscription does not block. Instead,
     // the subscription handle is added to a reactive list
@@ -12,6 +12,7 @@ RsvpController = RouteController.extend({
   },
 
   data: function () {
+    return Rsvps.find();
     // return a global data context like this:
     // Items.findOne({_id: this.params._id});
   },
