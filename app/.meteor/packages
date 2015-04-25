@@ -6,7 +6,8 @@
 
 meteor-platform
 iron:router
-twbs:bootstrap
 fortawesome:fontawesome
 dburles:google-maps
 aldeed:autoform
+mizzao:bootstrap-3
+aldeed:collection2
