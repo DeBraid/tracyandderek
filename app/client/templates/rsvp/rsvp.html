@@ -47,7 +47,12 @@
   <div class="row">
     <div class="col-sm-12 rsvp-form-container">
       {{#if attending }}
-        {{> quickForm collection="Rsvps" id="insertRsvpForm" type="insert"}}
+        {{> quickForm 
+              collection="Rsvps" 
+              id="insertRsvpForm" 
+              type="method" 
+              meteormethod="submitRsvp"
+        }}
       {{/if}}
     </div>
   </div>

@@ -2,10 +2,10 @@
 /* Server Only Methods */
 /*****************************************************************************/
 Meteor.methods({
-  /*
-   * Example:
-   *
-   * '/app/items/insert': function (item) {
-   * }
-   */
+
+  'submitRsvp': function (item) {
+    // console.log(item);
+    console.log("item in submitRsvp", item);
+  }
+   
 });
