@@ -1,18 +1,16 @@
 /*****************************************************************************/
 /* Client and Server Methods */
 /*****************************************************************************/
-Meteor.methods({
-  /*
-   * Example:
-   *
-   * '/app/items/insert': function (item) {
-   *  if (this.isSimulation) {
-   *    // do some client stuff while waiting for
-   *    // result from server.
-   *    return;
-   *  }
-   *
-   *  // server method logic
-   * }
-   */
-});
+// Meteor.methods({
+//    onSuccessInsert: function () {
+//    console.log("success callback is now running!");
+//     // create alert thanking them
+//     Session.set('isSuccessfulRsvp', true);
+    
+//     // scroll to top
+//     document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+//     // add name to aleat
+//    }
+   
+// });
