@@ -2,10 +2,10 @@
 /* Rsvp: Event Handlers */
 /*****************************************************************************/
 Template.Rsvp.events({
-  'click .btn-success': function () {
+  'click [data-action=attending]': function () {
     Session.set('isAttending', true);
   },
-  'click .btn-warning': function () {
+  'click [data-action=notAttending]': function () {
     Session.set('isAttending', false);
   }
 });
