@@ -3,38 +3,28 @@ Rsvps = new Mongo.Collection("rsvps");
 Rsvps.attachSchema(new SimpleSchema({
   guests: {
     type: Array,
+    label: "Name of Guest(s)",
     optional: false,
     minCount: 1,
-    maxCount: 3
+    maxCount: 4
   },
   "guests.$": {
     type: String
   },
-  name: {
+  restrictions: {
     type: String,
-    label: "Guest Name(s)",
-    // placeholder: "foobar",
-    max: 200
-  },
-  choose: {
-    type: String,
-    allowedValues: [
-       "one",
-       "two",
-       "three"
-    ],
+    label: "Dietary restrictions? Special Requests? Buried Treasure? Tell us about it.",
     optional: true,
-    label: "Choose a number"
-  },
-  agree: {
-    type: Boolean,
-    label: "Do you have dietary restrictions?",
+    max: 250,
     autoform: {
-       type: "boolean-radios",
-       trueLabel: "You bet, meat is murder.",
-       falseLabel: "Nope.  Bring the loins.",
-       value: false
+       rows: 4
     }
+  },
+  email: {
+      type: String,
+      regEx: SimpleSchema.RegEx.Email,
+      label: "Email (recomended but optional)",
+      optional: true
   }
 }));
 

@@ -8,3 +8,10 @@
   white-space: normal;
   font-size: 18px;
 }
+
+.rsvp-form-container .panel-heading {
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: 1.75em;
+  text-align: center;
+}

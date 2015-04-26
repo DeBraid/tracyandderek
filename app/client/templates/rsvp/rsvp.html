@@ -1,7 +1,11 @@
 <template name="Rsvp">
-  <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12">
-    <div class="row">
+  <div class="row">
     <div class="col-sm-12 text-center">
+      <div class="row">
+        {{#if successfulRsvp }}
+          <h1>thanks for coming, xoxox</h1>
+        {{/if}}
+      </div>
       <div class="row">
         <span class="pull-right" style="margin-right:5px;">
           <img src="wedding-calendar-lg.png" alt="">
@@ -28,7 +32,7 @@
   <div class="row toggle-button-group">
     <div class="col-xs-6">
       <button class="btn btn-block btn-success">
-        Oh baby, I'm in!
+        Oh baby, count me in!
         <p><i class="fa fa-check"></i></p>
       </button>
     </div>
@@ -41,16 +45,10 @@
   </div>
   
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12 rsvp-form-container">
       {{#if attending }}
         {{> quickForm collection="Rsvps" id="insertRsvpForm" type="insert"}}
       {{/if}}
     </div>
-  </div>
-
-  <!-- {{#each rsvps}}
-    <p>name: {{name}}</p>
-    <p>Notes: {{notes}}</p>
-  {{/each}} -->
   </div>
 </template>
