@@ -5,7 +5,8 @@
         {{> WeddingCalendarIcon}}
       </div>
     {{else}}    
-      <div class="col-sm-12 text-center">
+      {{#Animate }}
+      <div class="col-sm-12 text-center rsvp-info animate">
         <div class="row">
           {{> WeddingCalendarIcon}}
           <h2>29 August 2015</h2>
@@ -25,6 +26,7 @@
           </a>
         </div>
       </div>
+      {{/Animate }}
     {{/if}}
   </div>
 
@@ -43,24 +45,20 @@
     </div>
   </div>
   
-  <div class="row">
-    <div class="col-sm-12 rsvp-form-container">
-      {{#if attending }}
-        {{> quickForm 
-              collection="Rsvps" 
-              id="insertRsvpForm" 
-              type="method" 
-              meteormethod="submitRsvp"
-        }}
-      {{/if}}
-     
-      {{#if successfulRsvp }}
-        <div class="row">
-          <h1>thanks for coming, xoxox</h1>
-        </div>
-      {{/if}}
+  {{#if attending }}
+    {{#Animate }}
+    <div class="row">
+      <div class="col-sm-12 rsvp-form-container animate">
+          {{> quickForm 
+                collection="Rsvps" 
+                id="insertRsvpForm" 
+                type="method" 
+                meteormethod="submitRsvp"
+          }}
+      </div>
     </div>
-  </div>
+    {{/Animate }}
+  {{/if}}
 </template>
 
 <template name="WeddingCalendarIcon">
