@@ -3,6 +3,10 @@
 /*****************************************************************************/
 .rsvp {
 }
+.navbar-container * {
+  color: #000;
+  font-size: 20px;
+}
 
 .toggle-button-group * {
   white-space: normal;
