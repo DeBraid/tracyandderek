@@ -2,6 +2,13 @@
 /* Photos: Event Handlers */
 /*****************************************************************************/
 Template.Photos.events({
+  'click [data-action=takePhoto]': function () {
+    MeteorCamera.getPicture({
+      width: 300,
+      height: 500,
+      quality: 50
+    });
+  }
 });
 
 /*****************************************************************************/
