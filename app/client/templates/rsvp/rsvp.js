@@ -24,14 +24,8 @@ Template.Rsvp.helpers({
 });
 
 Template.WeddingCalendarIcon.helpers({
-  klass: function () {
-    var klass = ''
-    if (Session.get('isAttending')) {
-      klass = 'pull-left' 
-    } else{
-      klass = 'pull-right' 
-    };
-    return klass;
+  calendarIconPosition: function () {
+    return Session.get('isAttending') ? 'pull-left' : 'pull-right'; 
   }
 })
 

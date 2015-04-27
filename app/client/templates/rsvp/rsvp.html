@@ -4,44 +4,14 @@
         {{> WeddingCalendarIcon}}
     {{else}}    
       {{#Animate }}
-      <div class="col-sm-12 text-center rsvp-info animate">
-        <div class="row">
-          {{> WeddingCalendarIcon}}
-          <h2>29 August 2015</h2>
-        </div>
-        <div class="row">
-          <span class="pull-right" style="margin-right:7.5px;">
-            <i class="fa fa-clock-o fa-5x"></i>
-          </span>
-          <h2>Reception 4pm</h2>
-        </div>
-        <div class="row">
-          <a style="color:black;" href="{{ pathFor 'map'}}">
-            <span class="pull-right" style="margin-right:15px;">
-              <i class="fa fa-map-marker fa-5x"></i>
-            </span>
-            <h2>Location</h2>
-          </a>
-        </div>
-      </div>
+        {{> RsvpBody }}
       {{/Animate }}
     {{/if}}
   </div>
 
   <div class="row toggle-button-group">
     <!-- ANIMATE THIS -->
-    <div class="col-xs-6">
-      <button class="btn btn-block btn-success" data-action="attending">
-        Oh baby, count me in!
-        <p><i class="fa fa-check"></i></p>
-      </button>
-    </div>
-    <div class="col-xs-6">
-      <button class="btn btn-block btn-danger" data-action="notAttending">
-        Out like Lance Bass.
-        <p><i class="fa fa-close"></i></p>      
-      </button>
-    </div>
+    {{> RsvpButtonGroup }}
   </div>
   
   {{#if attending }}
@@ -61,7 +31,45 @@
 </template>
 
 <template name="WeddingCalendarIcon">
-    <span class="{{klass}}" data-action="notAttending" style="margin-right:5px;">
+    <span class="{{ calendarIconPosition }}" data-action="notAttending" style="margin-right:5px;">
       <img src="wedding-calendar-lg.png" alt="">
     </span>
+</template>
+
+<template name="RsvpBody">
+  <div class="col-sm-12 text-center rsvp-info animate">
+    <div class="row">
+      {{> WeddingCalendarIcon}}
+      <h2>29 August 2015</h2>
+    </div>
+    <div class="row">
+      <span class="pull-right" style="margin-right:7.5px;">
+        <i class="fa fa-clock-o fa-5x"></i>
+      </span>
+      <h2>Reception 4pm</h2>
+    </div>
+    <div class="row">
+      <a style="color:black;" href="{{ pathFor 'map'}}">
+        <span class="pull-right" style="margin-right:15px;">
+          <i class="fa fa-map-marker fa-5x"></i>
+        </span>
+        <h2>Location</h2>
+      </a>
+    </div>
+  </div>
+</template>
+
+<template name="RsvpButtonGroup">
+  <div class="col-xs-6">
+    <button class="btn btn-block btn-success" data-action="attending">
+      Oh baby, count me in!
+      <p><i class="fa fa-check"></i></p>
+    </button>
+  </div>
+  <div class="col-xs-6">
+    <button class="btn btn-block btn-danger" data-action="notAttending">
+      Out like Lance Bass.
+      <p><i class="fa fa-close"></i></p>      
+    </button>
+  </div>
 </template>
