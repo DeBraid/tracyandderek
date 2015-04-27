@@ -4,8 +4,23 @@
 .main {
 }
 
-body {
+.homeBgImage {
   background: url(engagement-full-front.jpg) center center no-repeat fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+   background-size: cover;
+}
+.rsvpBgImage {
+  background: url(engagement-pier-center.jpg) center center no-repeat fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+   background-size: cover;
+}
+
+.mapBgImage {
+  background: url(engagement-back-hug.jpg) center center no-repeat fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

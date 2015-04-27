@@ -25,5 +25,6 @@ RsvpController = RouteController.extend({
     // the data context by providing it as an option in the
     // last parameter.
     this.render('Rsvp', { /* data: {} */});
+    document.body.className = 'rsvpBgImage'
   }
 });

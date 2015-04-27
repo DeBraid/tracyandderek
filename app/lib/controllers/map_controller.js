@@ -24,5 +24,6 @@ MapController = RouteController.extend({
     // the data context by providing it as an option in the
     // last parameter.
     this.render('Map', { /* data: {} */});
+    document.body.className = 'mapBgImage'
   }
 });
