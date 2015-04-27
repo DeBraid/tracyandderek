@@ -1,16 +1,22 @@
 <template name="Map">
-  <h2>Casablanca Winery Inn & Spa</h2>
-  <p>4 Windward Dr, Grimsby, ON L3M 4E8</p>
-  <a href="https://www.google.ca/maps/dir/''/casablanca+winery+inn/@43.2099289,-79.6355807,13z/" target="_blank">
-    <h4>Get Directions</h4>
-  </a>
-  <p>(905) 309-7171</p>
-  <a href="http://www.casablancawineryinn.com">
-    <p>casablancawineryinn.com</p>
-  </a>
+  <div class="row">
+    <div class="col-sm-12 map-info">
+      <h2>Casablanca Winery Inn & Spa</h2>
+      <p>4 Windward Dr, Grimsby, ON L3M 4E8</p>
+      <a href="https://www.google.ca/maps/dir/''/casablanca+winery+inn/@43.2099289,-79.6355807,13z/" target="_blank">
+        <h4>Get Directions</h4>
+      </a>
+      <p>(905) 309-7171</p>
+      <a href="http://www.casablancawineryinn.com">
+        <p>casablancawineryinn.com</p>
+      </a>
+    </div>
+  </div>
 
-  <div class="map-container">
-    {{> googleMap name="CasablancaMap" options=casablancaMap }}
+  <div class="row">
+    <div class="col-sm-12 map-container">
+      {{> googleMap name="CasablancaMap" options=casablancaMap }}
+    </div>
   </div>
 
 </template>

@@ -1,13 +1,23 @@
 <template name="MasterLayout">
   {{> Nav }}
-  {{#Animate }}
-  <div class="container master-layout-container animate">
+  <div class="container">
+    {{#Animate }}
+    <div class="row master-layout-container animate">
       <div class="
         col-lg-8 col-lg-offset-2 
         col-md-8 col-md-offset-2 
         col-sm-12">
           {{> yield}}
       </div>
+    </div>
+    {{/Animate }}
   </div>
-  {{/Animate }}
+</template>
+
+<template name="footer">
+  <div class="row">
+    <a href="http://cacheflow.ca" target="_blank">
+      cacheflow.ca
+    </a>
+  </div>
 </template>
