@@ -20,7 +20,20 @@ Template.Rsvp.helpers({
   successfulRsvp: function () {
     return Session.get('isSuccessfulRsvp');
   },
+
 });
+
+Template.WeddingCalendarIcon.helpers({
+  klass: function () {
+    var klass = ''
+    if (Session.get('isAttending')) {
+      klass = 'pull-left' 
+    } else{
+      klass = 'pull-right' 
+    };
+    return klass;
+  }
+})
 
 /*****************************************************************************/
 /* Rsvp: Lifecycle Hooks */

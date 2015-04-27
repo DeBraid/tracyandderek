@@ -1,8 +1,8 @@
 /*****************************************************************************/
 /* Rsvp: Style */
 /*****************************************************************************/
-.rsvp-form-container, .rsvp-info {
-  background: rgba(255, 255, 255, 0.75);
+#insertRsvpForm {
+  background: rgba(255, 255, 255, 0.75) !important;
 }
 .navbar-container * {
   color: #000;
@@ -12,6 +12,10 @@
 .toggle-button-group * {
   white-space: normal;
   font-size: 18px;
+}
+
+.toggle-button-group {
+  margin: 1em;
 }
 
 .rsvp-form-container .panel-heading {
