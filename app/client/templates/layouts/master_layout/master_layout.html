@@ -1,11 +1,13 @@
 <template name="MasterLayout">
   {{> Nav }}
-  <div class="container">
-    <div class="
-      col-lg-8 col-lg-offset-2 
-      col-md-8 col-md-offset-2 
-      col-sm-12">
-        {{> yield}}
-    </div>
+  {{#Animate }}
+  <div class="container master-layout-container animate">
+      <div class="
+        col-lg-8 col-lg-offset-2 
+        col-md-8 col-md-offset-2 
+        col-sm-12">
+          {{> yield}}
+      </div>
   </div>
+  {{/Animate }}
 </template>
