@@ -3,7 +3,7 @@ PhotosController = RouteController.extend({
     // set up the subscriptions for the route and optionally
     // wait on them like this:
     //
-    // this.subscribe('item', this.params._id).wait();
+    this.subscribe('photos').wait();
     //
     // "Waiting" on a subscription does not block. Instead,
     // the subscription handle is added to a reactive list
@@ -13,7 +13,9 @@ PhotosController = RouteController.extend({
 
   data: function () {
     // return a global data context like this:
-    // Items.findOne({_id: this.params._id});
+    return {
+      photos: Photos.find()
+    }
   },
 
   action: function () {

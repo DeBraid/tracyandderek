@@ -6,3 +6,6 @@
 Meteor.publish('rsvps', function () {
   return Rsvps.find();
 });
+Meteor.publish('photos', function () {
+  return Photos.find();
+});
