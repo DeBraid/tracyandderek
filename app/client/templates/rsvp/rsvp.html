@@ -17,14 +17,7 @@
   {{#if attending }}
     {{#Animate }}
     <div class="row">
-      <div class="col-sm-12 rsvp-form-container animate">
-          {{> quickForm 
-                collection="Rsvps" 
-                id="insertRsvpForm" 
-                type="method" 
-                meteormethod="submitRsvp"
-          }}
-      </div>
+      {{> RsvpForm}}
     </div>
     {{/Animate }}
   {{/if}}
@@ -71,5 +64,16 @@
       Out like Lance Bass.
       <p><i class="fa fa-close"></i></p>      
     </button>
+  </div>
+</template>
+
+<template name="RsvpForm">
+  <div class="col-sm-12 rsvp-form-container animate">
+    {{> quickForm 
+        collection="Rsvps" 
+        id="insertRsvpForm" 
+        type="method" 
+        meteormethod="submitRsvp"
+    }}
   </div>
 </template>
