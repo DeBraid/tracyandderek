@@ -1,15 +1,20 @@
 Rsvps = new Mongo.Collection("rsvps");
+SuccessfulRsvp = new Mongo.Collection("successfulRsvp");
+
+Rsvps.after.insert(function (userId, doc) {
+  console.log('server RSVPS after hook w/', doc.guests);
+  SuccessfulRsvp.insert({
+    guests: doc.guests,
+    email: doc.email
+  })
+});
 
 Rsvps.attachSchema(new SimpleSchema({
   guests: {
-    type: Array,
+    type: String,
     label: "Name of Guest(s)",
     optional: false,
-    minCount: 1,
-    maxCount: 4
-  },
-  "guests.$": {
-    type: String
+    max: 80    
   },
   restrictions: {
     type: String,
@@ -23,9 +28,13 @@ Rsvps.attachSchema(new SimpleSchema({
   email: {
       type: String,
       regEx: SimpleSchema.RegEx.Email,
-      label: "Email (recomended but optional)",
+      label: "Email (recommended but optional)",
       optional: true
   }
+  // , 
+  // createdAt: {
+  //   autoValue: true
+  // }
 }));
 
 Rsvps.allow({

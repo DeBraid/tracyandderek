@@ -16,11 +16,7 @@ Template.Rsvp.events({
 Template.Rsvp.helpers({
   attending: function () {
     return Session.get('isAttending');
-  },
-  successfulRsvp: function () {
-    return Session.get('isSuccessfulRsvp');
-  },
-
+  }
 });
 
 Template.WeddingCalendarIcon.helpers({
@@ -43,16 +39,21 @@ Template.Rsvp.rendered = function () {
 Template.Rsvp.destroyed = function () {
 };
 
+Rsvps.after.insert(function (userId, doc) {
+  console.log('client side RSVPS after hook', doc.guests);
+});
+
 // AutoForm.hooks({
-//   insertRsvpForm: hooksObject
+//   insertRsvpForm: rsvpHooks
 // });
 
-// var hooksObject = {
+// var rsvpHooks = {
 //   before: {
 //     // Replace `formType` with the form `type` attribute to which this hook applies
-//     formType: function(doc) {
+//     method: function(doc) {
 //       // Potentially alter the doc
-//       doc.foo = 'bar';
+//       // doc.foo = 'bar';
+//       console.log("doc in before", doc);
 
 //       // Then return it or pass it to this.result()
 //       //return doc; (synchronous)
@@ -66,15 +67,17 @@ Template.Rsvp.destroyed = function () {
 //   // collection.insert, collection.update, or Meteor.call
 //   after: {
 //     // Replace `formType` with the form `type` attribute to which this hook applies
-//     formType: function(error, result) {}
+//     method: function(error, result) {
+//       console.log("result", result);
+//     }
 //   },
 //   onSuccess: function(formType, result) {
 //     console.log("success callback is now running!");
 //     // create alert thanking them
-//     Session.set('isSuccessfulRsvp', true);
+//     // Session.set('isSuccessfulRsvp', true);
     
 //     // scroll to top
-//     document.body.scrollTop = document.documentElement.scrollTop = 0;
+//     // document.body.scrollTop = document.documentElement.scrollTop = 0;
 
 //     // add name to aleat
 //   }

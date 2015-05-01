@@ -15,7 +15,7 @@ Template.Photos.events({
       if (data) {
         Meteor.call('storeNewPhoto', data, function () {
           Session.set('isNewPhoto', true);
-        } );
+        });
       }
     });
   }
