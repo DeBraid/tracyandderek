@@ -13,6 +13,24 @@
       <div class="map-container">
         {{> googleMap name="CasablancaMap" options=casablancaMap }}
       </div>
+
+      <div class="col-sm-12">
+        {{> fullDirections }}
+      </div>
     </div>
   </div>
+</template>
+
+
+<template name="fullDirections">
+<a class="btn btn-default btn-block" href="directions-wedding-from-TO.pdf" target="_blank">
+  <h4>Download / Print Version</h4>
+</a>
+<!-- <img src="directions-from-TO.png" class="img-responsive" alt=""> -->
+
+<h3>For the Hipsters: </h3>
+<p>Exit Toronto towards Hamilton. Follow the QEW Niagara until <strong>Casablanca Blvd</strong> exit 74.  Turn left towards the lake onto Casablanca Blvd, at the stop sign turn left onto North Service Rd.  Casablanca Inn is on the left, you're all set!</p> 
+
+<h3>From Hamilton/Stoney Creek:</h3>
+<p>Either take the QEW (same directions as above) or travel on Highway 8 to Casablanca Blvd.  Turn left onto Casablanca Blvd, travel until the stop sign and turn left onto North Service Rd.  You will see the Casablanca Inn on your left.</p>
 </template>
