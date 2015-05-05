@@ -39,3 +39,10 @@ Router.route('thebigday', {
   action: 'action',
   where: 'client'
 });
+
+Router.route('registry', {
+  name: 'registry',
+  controller: 'RegistryController',
+  action: 'action',
+  where: 'client'
+});

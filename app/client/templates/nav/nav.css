@@ -3,6 +3,9 @@
 /*****************************************************************************/
 .nav {
 }
+/*.navbar-nav {
+  margin: 0 !important;
+}*/
 .navbar-container * {
   color: #000;
   font-size: 25px;
