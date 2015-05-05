@@ -4,9 +4,8 @@
 #insertRsvpForm {
   background: rgba(255, 255, 255, 0.75) !important;
 }
-.navbar-container * {
+.rsvp-info * {
   color: #000;
-  font-size: 20px;
 }
 
 .toggle-button-group * {
