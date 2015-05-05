@@ -9,6 +9,7 @@ Rsvps.attachSchema(new SimpleSchema({
     type: String,
     label: "Name of Guest(s)",
     optional: false,
+    min: 5,
     max: 80    
   },
   restrictions: {

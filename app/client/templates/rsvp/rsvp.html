@@ -1,13 +1,13 @@
 <template name="Rsvp">
   <div class="row">
-    <!-- {{#if successfulRsvp }} -->
+    {{#if isSuccessfulRsvp }}
       {{#each mostRecentRsvp }}
         <h2>Thanks for RSVP {{ guests }}!</h2>
         {{#if email }}
           <h4>We'll keep you in the loop via {{ email }}</h4>
         {{/if}}  
       {{/each}}
-    <!-- {{/if}} -->
+    {{/if}}
     {{#if attending }}
         {{> WeddingCalendarIcon}}
     {{else}}    

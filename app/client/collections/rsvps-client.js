@@ -1,4 +1,7 @@
-Rsvps.after.insert(function(userId, doc) {
-  console.log("Inserted new RSVP:", this._id);
-  console.log("Inserted new RSVP, doc:", doc);
+AutoForm.addHooks('insertRsvpForm', {
+  onSuccess: function(operation, result, template) {
+    console.log("GOOOOT ONE!");
+    Session.set('isSuccessfulRsvp', true);
+	Session.set('isAttending', false);
+  }
 });
