@@ -1,7 +1,7 @@
 <template name="Rsvp">
   <div class="row">
     <!-- {{#if successfulRsvp }} -->
-      {{#each successfulRsvp }}
+      {{#each mostRecentRsvp }}
         <h2>Thanks for RSVP {{ guests }}!</h2>
         {{#if email }}
           <h4>We'll keep you in the loop via {{ email }}</h4>
@@ -82,6 +82,7 @@
         id="insertRsvpForm" 
         type="method" 
         meteormethod="submitRsvp"
+        omitFields="createdAt"
     }}
   </div>
-</template>
+</template> 

@@ -4,7 +4,6 @@ RsvpController = RouteController.extend({
     // wait on them like this:
     //
     this.subscribe('rsvps').wait();
-    this.subscribe('successfulRsvp').wait();
     
     //
     // "Waiting" on a subscription does not block. Instead,
@@ -14,11 +13,22 @@ RsvpController = RouteController.extend({
   },
 
   data: function () {
-    return {
-      successfulRsvp: SuccessfulRsvp.find()
+    var mostRecentRsvp = Rsvps.find({},{sort:{createdAt: -1}, limit: 1});
+    return { 
+      mostRecentRsvp: mostRecentRsvp
     }
-    // return a global data context like this:
-    // Items.findOne({_id: this.params._id});
+    // var rsvps = Rsvps.find().fetch();
+    // var rsvpCount = Rsvps.length;
+    // Session.set('isRsvpSubmitted', false);
+    
+    // if ( rsvpCount > 0) {
+    //   Tracker.autorun(function () {
+    //     console.log("rsvpCount", rsvpCount.length);
+
+    //   });
+    // } else {
+
+    // };
   },
 
   action: function () {

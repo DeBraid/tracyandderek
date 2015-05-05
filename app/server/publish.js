@@ -6,8 +6,8 @@
 Meteor.publish('rsvps', function () {
   return Rsvps.find();
 });
-Meteor.publish('successfulRsvp', function () {
-  return SuccessfulRsvp.find();
+Meteor.publish('newRsvp', function () {
+  return NewRsvp.find();
 });
 Meteor.publish('photos', function () {
   return Photos.find();

@@ -1,12 +1,7 @@
 Rsvps = new Mongo.Collection("rsvps");
-SuccessfulRsvp = new Mongo.Collection("successfulRsvp");
 
 Rsvps.after.insert(function (userId, doc) {
   console.log('server RSVPS after hook w/', doc.guests);
-  SuccessfulRsvp.insert({
-    guests: doc.guests,
-    email: doc.email
-  })
 });
 
 Rsvps.attachSchema(new SimpleSchema({
@@ -30,11 +25,13 @@ Rsvps.attachSchema(new SimpleSchema({
       regEx: SimpleSchema.RegEx.Email,
       label: "Email (recommended but optional)",
       optional: true
+  },
+  createdAt: {
+    type: Date,
+    autoValue: function () {
+      return new Date();
+    }
   }
-  // , 
-  // createdAt: {
-  //   autoValue: true
-  // }
 }));
 
 Rsvps.allow({
