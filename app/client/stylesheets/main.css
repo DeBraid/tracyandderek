@@ -27,6 +27,14 @@
    background-size: cover;
 }
 
+.thebigdayBgImage {
+  background: url(website-5.jpg) center center no-repeat fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+   background-size: cover;
+}
+
 .master-layout-container {
   opacity: 1;
   transition: opacity 600ms;

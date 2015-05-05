@@ -32,3 +32,10 @@ Router.route('map', {
   action: 'action',
   where: 'client'
 });
+
+Router.route('thebigday', {
+  name: 'thebigday',
+  controller: 'ThebigdayController',
+  action: 'action',
+  where: 'client'
+});
