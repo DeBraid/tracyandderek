@@ -3,6 +3,8 @@
 /*****************************************************************************/
 #insertRsvpForm {
   background: rgba(255, 255, 255, 0.75) !important;
+  padding: 1em;
+
 }
 .rsvp-info * {
   color: #000;

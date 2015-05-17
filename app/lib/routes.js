@@ -46,3 +46,10 @@ Router.route('registry', {
   action: 'action',
   where: 'client'
 });
+
+Router.route('stag', {
+  name: 'stag',
+  controller: 'StagController',
+  action: 'action',
+  where: 'client'
+});
