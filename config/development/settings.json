@@ -1,6 +1,6 @@
 {
-  "public": {
-  },
+  	"public": {
+  	},
 
-  "sample": "value"
+	"mailInfo": "test"
 }

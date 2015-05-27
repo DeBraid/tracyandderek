@@ -4,6 +4,7 @@
 Meteor.methods({
   'submitRsvp': function (item) {
     console.log("item in submitRsvp", item);
+    console.log("Settings Check:", Meteor.settings.mailInfo);
     Rsvps.insert(item);
     Meteor.call('sendEmail', item);
   },
@@ -21,7 +22,7 @@ Meteor.methods({
 
     // Build the e-mail text
     var text = "Thank you " + doc.guests + 
-    			" for your wedding RSVP" + "\n\n" + 
+    			" for your wedding RSVP!" + "\n\n" + 
     			"See you August 29th -- Tracy and Derek";
 
     this.unblock();
