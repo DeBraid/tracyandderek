@@ -24,8 +24,8 @@ Rsvps.attachSchema(new SimpleSchema({
   email: {
       type: String,
       regEx: SimpleSchema.RegEx.Email,
-      label: "Email (recommended but optional)",
-      optional: true
+      label: "Email (for confirmation)",
+      optional: false
   },
   createdAt: {
     type: Date,
