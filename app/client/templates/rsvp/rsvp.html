@@ -12,6 +12,9 @@
         {{> WeddingCalendarIcon}}
     {{else}}    
       {{#Animate }}
+        {{#if isNotAttending }}
+          {{> regrets }}
+        {{/if}}
         {{> RsvpBody }}
       {{/Animate }}
     {{/if}}
@@ -28,6 +31,12 @@
       {{> RsvpForm}}
     </div>
     {{/Animate }}
+  {{/if}}
+
+  {{#if isNotAttending }}
+    <div class="row">
+      {{> NotAttendingForm }}
+    </div>
   {{/if}}
 </template>
 
@@ -88,3 +97,21 @@
     }}
   </div>
 </template> 
+
+<template name="NotAttendingForm">
+  <div class="col-sm-12 form-container">
+    {{> quickForm 
+        collection="NotAttending" 
+        id="insertNotAttendingForm" 
+        type="method" 
+        meteormethod="submitNotAttending"
+        omitFields="createdAt"
+    }}
+  </div>
+</template>
+
+<template name="regrets">
+  <div class="row">
+    <h3>If you can't make the wedding, join us July 4th for the <a href="{{ pathFor 'stag' }}">Stag & Doe</a></h3>
+  </div>
+</template>

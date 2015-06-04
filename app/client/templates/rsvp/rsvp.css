@@ -1,7 +1,7 @@
 /*****************************************************************************/
 /* Rsvp: Style */
 /*****************************************************************************/
-#insertRsvpForm {
+#insertRsvpForm, #insertNotAttendingForm {
   background: rgba(255, 255, 255, 0.75) !important;
   padding: 1em;
 

@@ -4,7 +4,6 @@
 Meteor.methods({
   'submitRsvp': function (item) {
     console.log("item in submitRsvp", item);
-    console.log("Settings Check:", Meteor.settings.mailInfo);
     Rsvps.insert(item);
     Meteor.call('sendEmail', item);
   },
@@ -12,6 +11,10 @@ Meteor.methods({
     Photos.insert({
       src: pic
     });
+  },
+  submitNotAttending: function (item) {
+    console.log("item in submitNotAttending", item);
+    NotAttending.insert(item);
   }
 });
 
@@ -22,8 +25,9 @@ Meteor.methods({
 
     // Build the e-mail text
     var text = "Thank you " + doc.guests + 
-    			" for your wedding RSVP!" + "\n\n" + 
-    			"See you August 29th -- Tracy and Derek";
+          " for your wedding RSVP!" + "\n\n" + 
+    			"Please join us July 4th 2015 for our Stag and Doe" + "\n\n" + 
+    			"See you August 29th for the wedding -- Tracy and Derek";
 
     this.unblock();
 
