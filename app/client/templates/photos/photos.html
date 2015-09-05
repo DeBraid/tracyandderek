@@ -1,10 +1,18 @@
 <template name="Photos">
   <div class="row">
-      <h2>Some images of the event</h2>
-      {{#each pics }}
-        <div class="col-sm-3 thumbnail">
-          <img class="img-responsive" src="{{ src }}" alt="">
-        </div>
-      {{/each}}
+      <h2>First Look @ Fifty Point</h2>
+  </div>
+  <div class="row">
+	{{#each pics }}
+			<div class="col-sm-6 {{ klass }} thumbnail">
+				<img class="img-responsive " src="{{ src }}" alt="">
+			</div>
+		<!-- {{#if portrait }}
+		{{else}}
+			<div class="col-sm-6 thumbnail">
+				<img class="img-responsive" src="{{ src }}" alt="">
+			</div>
+		{{/if}} -->
+	{{/each}}
   </div>
 </template>
