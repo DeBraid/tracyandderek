@@ -1,17 +1,10 @@
 <template name="Photos">
   <div class="row">
-    <button class="btn btn-default btn-block" data-action="takePhoto">
-      Take a Photo
-    </button>
-  </div>
-  <div class="row">
-    {{#if newPhoto }}
-      <h3>Thanks for sharing a pic!</h3>
-    {{/if}}
-    {{#each photos }}
-      <div class="col-sm-3 thumbnail">
-        <img class="img-responsive" src="{{ src }}" alt="">
-      </div>
-    {{/each}}
+      <h2>Some images of the event</h2>
+      {{#each photos }}
+        <div class="col-sm-3 thumbnail">
+          <img class="img-responsive" src="{{ src }}" alt="">
+        </div>
+      {{/each}}
   </div>
 </template>
