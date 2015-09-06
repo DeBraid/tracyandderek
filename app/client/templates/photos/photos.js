@@ -1,21 +1,27 @@
 /*****************************************************************************/
 /* Photos: Helpers */
 /*****************************************************************************/
+Template.Photo.helpers({
+    singlePhotoObject: function () {
+        return Session.get('singlePhotoData');
+    }
+});
+
 Template.Photos.helpers({
     pics: function () {
         return [
-            { src: 'day-of/bridal-party.JPG'}, 
-            { src: 'day-of/bridesmaids-tracy-peak.JPG'}, 
-            { src: 'day-of/derek-lisa.JPG'}, 
-            { src: 'day-of/roady-popo.JPG'}, 
-            { src: 'day-of/tracy-full-dress.JPG'}, 
-            { src: 'day-of/brian-emily.JPG'}, 
-            { src: 'day-of/wedding-party.JPG'}, 
-            { src: 'day-of/bridesmaids-look-at-tracy.JPG'},
-            { src: 'day-of/tracy-photoshoot.JPG'}, 
-            { src: 'day-of/tracy-concerned.JPG'}, 
-            { src: 'day-of/wedding-party-2.JPG'}, 
-            { src: 'day-of/wedding-party-cele.JPG'}
+            { id: 'bridal-party', src: 'day-of/bridal-party.JPG'}, 
+            { id: 'bridesmaids-tracy-peak', src: 'day-of/bridesmaids-tracy-peak.JPG'}, 
+            { id: 'derek-lisa', src: 'day-of/derek-lisa.JPG'}, 
+            { id: 'roady-popo', src: 'day-of/roady-popo.JPG'}, 
+            { id: 'tracy-full-dress', src: 'day-of/tracy-full-dress.JPG'}, 
+            { id: 'brian-emily', src: 'day-of/brian-emily.JPG'}, 
+            { id: 'wedding-party', src: 'day-of/wedding-party.JPG'}, 
+            { id: 'bridesmaids-look-at-tracy', src: 'day-of/bridesmaids-look-at-tracy.JPG'},
+            { id: 'tracy-photoshoot', src: 'day-of/tracy-photoshoot.JPG'}, 
+            { id: 'tracy-concerned', src: 'day-of/tracy-concerned.JPG'}, 
+            { id: 'wedding-party-2', src: 'day-of/wedding-party-2.JPG'}, 
+            { id: 'wedding-party-cele', src: 'day-of/wedding-party-cele.JPG'}
         ]
     },
     enlargedPhotos: function () {
@@ -43,6 +49,10 @@ Template.Photos.events({
         var clickState = Session.get('isPhotoClicked');
         console.log(clickState);
         return Session.set('isPhotoClicked', !clickState);    
+    },
+    'click .photo': function (event) {
+        var id = event.target.id;
+        Router.go('/photo/' + id);
     }
 });
 

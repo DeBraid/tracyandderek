@@ -12,8 +12,17 @@
     <div class="row">
         {{#each pics }}
         <div class="{{ photoContainerWidth }} thumbnail photo">
-            <img class="img-responsive " src="{{ src }}" alt="">
+            <img id="{{ id }}" class="img-responsive" src="{{ src }}" alt="{{ id }}">
         </div>
         {{/each}}
     </div>
+</template>
+
+
+<template name="Photo">
+  <div class="{{ photoContainerWidth }} thumbnail photo">
+      {{#with singlePhotoObject }}
+          <img id="{{ id }}" class="img-responsive" src="{{ src }}" alt="{{ id }}">
+      {{/with}}
+  </div>
 </template>
