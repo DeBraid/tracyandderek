@@ -1,0 +1,21 @@
+<template name="Photo">
+  {{> PagingButtons }}
+  <div class="{{ photoContainerWidth }} thumbnail photo">
+      {{#with singlePhotoObject }}
+          <img id="{{ id }}" class="img-responsive" src="{{ src }}" alt="{{ id }}">
+      {{/with}}
+  </div>
+</template>
+
+<template name="PagingButtons">
+	<div class="row">
+		<div class="col-sm-12">
+			<a href="{{ pathFor 'photos' }}">
+				<button class="btn btn-default btn-lg pull-right">
+					<i class="fa fa-arrow-left"></i>
+					 Back to All Photos 
+				</button>
+			</a>
+		</div>
+	</div>
+</template>
