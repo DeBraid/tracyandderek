@@ -5,15 +5,9 @@
   </div>
   <div class="row">
 	{{#each pics }}
-			<div class="col-sm-6 {{ klass }} thumbnail">
-				<img class="img-responsive " src="{{ src }}" alt="">
-			</div>
-		<!-- {{#if portrait }}
-		{{else}}
-			<div class="col-sm-6 thumbnail">
-				<img class="img-responsive" src="{{ src }}" alt="">
-			</div>
-		{{/if}} -->
+		<div class="col-sm-6 thumbnail">
+			<img class="img-responsive " src="{{ src }}" alt="">
+		</div>
 	{{/each}}
   </div>
 </template>

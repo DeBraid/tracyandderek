@@ -14,10 +14,10 @@ Template.Photos.helpers({
       { src: 'day-of/tracy-photoshoot.JPG' },
       { src: 'day-of/wedding-party-2.JPG' },
       { src: 'day-of/wedding-party-cele.JPG' },
-      { src: 'day-of/bridesmaids-look-at-tracy.JPG', klass: 'portrait-image' },
-      { src: 'day-of/tracy-full-dress.JPG', klass: 'portrait-image-oppo' },
-      { src: 'day-of/brian-emily.JPG', klass: 'portrait-image' },
-      { src: 'day-of/wedding-party.JPG', klass: 'portrait-image' },
+      { src: 'day-of/tracy-full-dress.JPG' },
+      { src: 'day-of/bridesmaids-look-at-tracy.JPG' },
+      { src: 'day-of/brian-emily.JPG' },
+      { src: 'day-of/wedding-party.JPG' },
 
     ]
   },
