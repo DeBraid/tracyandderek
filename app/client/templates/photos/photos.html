@@ -2,12 +2,11 @@
     <div class="row">
         <h2>
             First Look @ Fifty Point
-            {{#if isMobile}}
-            {{else}}
+            {{#unless isMobile}}
                 <button id="enlarge-photos" class="btn btn-default btn-md pull-right">
                     {{#if enlargedPhotos}} Enlarge All {{else}} Collapse {{/if}}
                 </button>
-            {{/if}}
+            {{/unless}}
         </h2>
     </div>
     <div class="row">
