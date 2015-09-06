@@ -12,10 +12,6 @@ PhotosController = RouteController.extend({
   },
 
   data: function () {
-    // return a global data context like this:
-    return {
-      // photos: Photos.find()
-    }
   },
 
   action: function () {
@@ -28,14 +24,3 @@ PhotosController = RouteController.extend({
     this.render('Photos', { /* data: {} */});
   }
 });
-
-
- // this.route('files', {
- //        path: '/files/:path(*)',
- //        action: function() {
- //            var path = this.params.path;
-
- //            console.log('will serve static content @ '+path);
- //            this.response.sendfile(path);
- //        }
- //    });
