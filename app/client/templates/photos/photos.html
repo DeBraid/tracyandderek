@@ -12,7 +12,7 @@
     <div class="row">
         {{#each pics }}
         <div class="{{ photoContainerWidth }} thumbnail photo">
-            <img id="{{ id }}" class="img-responsive" src="{{ src }}" alt="{{ id }}">
+            <img id="{{ id }}" class="img-responsive" src="{{ src }}" alt="{{ toTitleCase id }}">
         </div>
         {{/each}}
     </div>

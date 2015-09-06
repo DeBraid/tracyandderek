@@ -2,7 +2,7 @@
   {{> PagingButtons }}
   <div class="{{ photoContainerWidth }} thumbnail photo">
       {{#with singlePhotoObject }}
-          <img id="{{ id }}" class="img-responsive" src="{{ src }}" alt="{{ id }}">
+          <img id="{{ id }}" class="img-responsive" src="{{ src }}" alt="{{ toTitleCase id }}">
       {{/with}}
   </div>
 </template>
@@ -19,5 +19,3 @@
 		</div>
 	</div>
 </template>
-
-<!-- keep website 3 and 5 -->
