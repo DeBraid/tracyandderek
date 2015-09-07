@@ -1,25 +1,24 @@
 <template name="Photo">
-  {{> backButton }}
-  {{> nextPhoto }}
-  <div class="{{ photoContainerWidth }} thumbnail photo">
-      {{#with singlePhotoObject }}
-          <img id="{{ id }}" class="img-responsive" 
-          	data-number="{{ number }}"
-          	src="{{ src }}" alt="{{ toTitleCase id }}">
-      {{/with}}
-  </div>
+	<div class="row">
+		<div class="col-sm-12">
+			{{> backButton }}
+			{{> nextPhoto }}
+		</div>
+		<div class="{{ photoContainerWidth }} thumbnail photo">
+			{{#with singlePhotoObject }}
+				<img id="{{ id }}" class="img-responsive" data-number="{{ number }}"
+					src="{{ src }}" alt="{{ toTitleCase id }}">
+			{{/with}}
+		</div>
+	</div>
 </template>
 
 <template name="backButton">
-	<div class="row">
-		<div class="col-sm-12">
-			<a href="{{ pathFor 'photos' }}">
-				<button class="btn btn-default btn-lg pull-right" style="margin-bottom: 1rem;">
-					<i class="fa fa-arrow-left"></i>
-					 Back to All Photos 
-				</button>
-			</a>
-		</div>
-	</div>
+	<a href="{{ pathFor 'photos' }}">
+		<button class="btn btn-default btn-lg" style="margin: 1rem 0;">
+			<i class="fa fa-arrow-left"></i>
+			 All Photos 
+		</button>
+	</a>
 </template>
 
