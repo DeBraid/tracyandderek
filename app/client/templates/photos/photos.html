@@ -4,7 +4,13 @@
             First Look @ Fifty Point
             {{#unless isMobile}}
                 <button id="enlarge-photos" class="btn btn-default btn-md pull-right">
-                    {{#if enlargedPhotos}} Enlarge All {{else}} Collapse {{/if}}
+                    {{#if enlargedPhotos}} 
+                        Enlarge All 
+                        <i class="fa fa-plus" style="margin-left:1rem;"></i>
+                    {{else}} 
+                        Collapse 
+                        <i class="fa fa-minus" style="margin-left:1rem;"></i>
+                    {{/if}}
                 </button>
             {{/unless}}
         </h3>
@@ -16,7 +22,7 @@
             </div>
             {{#unless enlargedPhotos}} 
                 <button id="enlarge-photos" class="btn btn-default btn-md pull-right" style="margin-bottom:2rem;">
-                    <i class="fa fa-th"></i> 
+                    <i class="fa fa-minus"></i> 
                 </button>
             {{/unless}}
         {{/each}}
