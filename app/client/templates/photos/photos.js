@@ -16,18 +16,18 @@ Template.Photo.helpers({
 Template.Photos.helpers({
     pics: function () {
         return [
-            { id: 'bridal-party', src: 'day-of/bridal-party.JPG'}, 
-            { id: 'bridesmaids-tracy-peak', src: 'day-of/bridesmaids-tracy-peak.JPG'}, 
-            { id: 'derek-lisa', src: 'day-of/derek-lisa.JPG'}, 
-            { id: 'roady-popo', src: 'day-of/roady-popo.JPG'}, 
-            { id: 'tracy-full-dress', src: 'day-of/tracy-full-dress.JPG'}, 
-            { id: 'brian-emily', src: 'day-of/brian-emily.JPG'}, 
-            { id: 'wedding-party', src: 'day-of/wedding-party.JPG'}, 
-            { id: 'bridesmaids-look-at-tracy', src: 'day-of/bridesmaids-look-at-tracy.JPG'},
-            { id: 'tracy-photoshoot', src: 'day-of/tracy-photoshoot.JPG'}, 
-            { id: 'tracy-concerned', src: 'day-of/tracy-concerned.JPG'}, 
-            { id: 'wedding-party-2', src: 'day-of/wedding-party-2.JPG'}, 
-            { id: 'wedding-party-cele', src: 'day-of/wedding-party-cele.JPG'}
+            { number: 1, id: 'bridal-party', src: 'day-of/bridal-party.JPG'}, 
+            { number: 2, id: 'bridesmaids-tracy-peak', src: 'day-of/bridesmaids-tracy-peak.JPG'}, 
+            { number: 3, id: 'derek-lisa', src: 'day-of/derek-lisa.JPG'}, 
+            { number: 4, id: 'roady-popo', src: 'day-of/roady-popo.JPG'}, 
+            { number: 5, id: 'tracy-full-dress', src: 'day-of/tracy-full-dress.JPG'}, 
+            { number: 6, id: 'brian-emily', src: 'day-of/brian-emily.JPG'}, 
+            { number: 7, id: 'wedding-party', src: 'day-of/wedding-party.JPG'}, 
+            { number: 8, id: 'bridesmaids-look-at-tracy', src: 'day-of/bridesmaids-look-at-tracy.JPG'},
+            { number: 9, id: 'tracy-photoshoot', src: 'day-of/tracy-photoshoot.JPG'}, 
+            { number: 10, id: 'tracy-concerned', src: 'day-of/tracy-concerned.JPG'}, 
+            { number: 11, id: 'wedding-party-2', src: 'day-of/wedding-party-2.JPG'}, 
+            { number: 12, id: 'wedding-party-cele', src: 'day-of/wedding-party-cele.JPG'}
         ]
     },
     enlargedPhotos: function () {
@@ -59,9 +59,10 @@ Template.Photos.events({
         console.log(clickState);
         return Session.set('isPhotoClicked', !clickState);    
     },
-    'click .photo': function (event) {
-        var id = event.target.id;
-        Router.go('/photo/' + id);
+    'click .photo': function (e) {
+        var id = e.target.id;
+        var number = $(e.target).data('number');
+        Router.go('/photo/' + number + '/' + id);
     }
 });
 

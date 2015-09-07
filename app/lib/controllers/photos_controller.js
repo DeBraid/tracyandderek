@@ -27,6 +27,7 @@ PhotoController = RouteController.extend({
         var data = {
           id: id,
           src: '/day-of/' + id + '.JPG',
+          number: params.number
         }; 
         Session.set('singlePhotoData', data);
     }

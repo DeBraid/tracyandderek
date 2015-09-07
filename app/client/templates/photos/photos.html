@@ -18,7 +18,7 @@
     <div class="row">
         {{#each pics }}
             <div class="{{ photoContainerWidth }} thumbnail photo">
-                <img id="{{ id }}" class="img-responsive" src="{{ src }}" alt="{{ toTitleCase id }}">
+                <img data-number="{{ number }}" id="{{ id }}" class="img-responsive" src="{{ src }}" alt="{{ toTitleCase id }}">
             </div>
             {{#unless enlargedPhotos}} 
                 <button id="enlarge-photos" class="btn btn-default btn-md pull-right" style="margin-bottom:2rem;">
