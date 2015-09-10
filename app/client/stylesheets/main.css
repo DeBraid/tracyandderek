@@ -5,11 +5,11 @@
 }
 
 .homeBgImage {
-  background: url(website-3.jpg) center center no-repeat fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-   background-size: cover;
+  background: url(tracy-dress.jpg) center center no-repeat fixed; 
+  -webkit-background-size: 50%;
+  -moz-background-size: 50%;
+  -o-background-size: 50%;
+   background-size: 50%;
 }
 .rsvpBgImage {
   background: url(engagement-pier-center.jpg) center center no-repeat fixed; 
