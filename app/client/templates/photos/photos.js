@@ -43,7 +43,6 @@ Template.Photos.helpers({
 Template.Photos.events({
     'click #enlarge-photos': function () {
         var clickState = Session.get('isPhotoClicked');
-        console.log(clickState);
         return Session.set('isPhotoClicked', !clickState);    
     },
     'click .photo': function (e) {
@@ -60,8 +59,6 @@ Template.Photos.events({
 Template.Photos.created = function () {
     return Session.set('isPhotoClicked', true);
 };
-
-Template.Photos.rendered = function () {};
 
 Template.Photos.destroyed = function () {
     return Session.set('isPhotoClicked', false);
