@@ -1,51 +1,52 @@
-var photos = [
-    { number: 0, id: 'bridal-party', src: 'day-of/bridal-party.JPG'}, 
-    { number: 1, id: 'bridesmaids-tracy-peak', src: 'day-of/bridesmaids-tracy-peak.JPG'}, 
-    { number: 2, id: 'derek-lisa', src: 'day-of/derek-lisa.JPG'}, 
-    { number: 3, id: 'roady-popo', src: 'day-of/roady-popo.JPG'}, 
-    { number: 4, id: 'tracy-full-dress', src: 'day-of/tracy-full-dress.JPG'}, 
-    { number: 5, id: 'brian-emily', src: 'day-of/brian-emily.JPG'}, 
-    { number: 6, id: 'wedding-party', src: 'day-of/wedding-party.JPG'}, 
-    { number: 7, id: 'bridesmaids-look-at-tracy', src: 'day-of/bridesmaids-look-at-tracy.JPG'},
-    { number: 8, id: 'tracy-photoshoot', src: 'day-of/tracy-photoshoot.JPG'}, 
-    { number: 9, id: 'tracy-concerned', src: 'day-of/tracy-concerned.JPG'}, 
-    { number: 10, id: 'wedding-party-2', src: 'day-of/wedding-party-2.JPG'}, 
-    { number: 11, id: 'wedding-party-cele', src: 'day-of/wedding-party-cele.JPG'}
+var firstLookPhotoData = [
+    { id: 'bridal-party', folder: 'day-of', src: 'bridal-party.jpg'}, 
+    { id: 'bridesmaids-tracy-peak', folder: 'day-of', src: 'bridesmaids-tracy-peak.jpg'}, 
+    { id: 'derek-lisa', folder: 'day-of', src: 'derek-lisa.jpg'}, 
+    { id: 'roady-popo', folder: 'day-of', src: 'roady-popo.jpg'}, 
+    { id: 'tracy-full-dress', folder: 'day-of', src: 'tracy-full-dress.jpg'}, 
+    { id: 'brian-emily', folder: 'day-of', src: 'brian-emily.jpg'}, 
+    { id: 'wedding-party', folder: 'day-of', src: 'wedding-party.jpg'}, 
+    { id: 'bridesmaids-look-at-tracy', folder: 'day-of', src: 'bridesmaids-look-at-tracy.jpg'},
+    { id: 'tracy-photoshoot', folder: 'day-of', src: 'tracy-photoshoot.jpg'}, 
+    { id: 'tracy-concerned', folder: 'day-of', src: 'tracy-concerned.jpg'}, 
+    { id: 'wedding-party-2', folder: 'day-of', src: 'wedding-party-2.jpg'}, 
+    { id: 'wedding-party-cele', folder: 'day-of', src: 'wedding-party-cele.jpg'}
+];
+
+
+var ceremonyPhotoData = [
+  { id : 'brian-derek-tracy-amanda-tally', folder: 'ceremony', src: 'brian-derek-tracy-amanda-tally.jpg' },
+  { id : 'bridal-party', folder: 'ceremony', src: 'bridal-party.jpg' },
+  { id : 'flower-girls', folder: 'ceremony', src: 'flower-girls.jpg' },
+  { id : 'groomsmen-braids', folder: 'ceremony', src: 'groomsmen-braids.jpg' },
+  { id : 'husband-wife-smooch', folder: 'ceremony', src: 'husband-wife-smooch.jpg' },
+  { id : 'sweetheart-table', folder: 'ceremony', src: 'sweetheart-table.jpg' },
+  { id : 'bride-and-groom', folder: 'ceremony', src: 'bride-and-groom.jpg' },
+  { id : 'tracy-dad', folder: 'ceremony', src: 'tracy-dad.jpg' },
 ];
 
 PhotosController = RouteController.extend({
-  subscriptions: function () {
-    // set up the subscriptions for the route and optionally
-    // wait on them like this:
-    //
-    this.subscribe('photos').wait();
-    //
-    // "Waiting" on a subscription does not block. Instead,
-    // the subscription handle is added to a reactive list
-    // and when all items in this list are ready, this.ready()
-    // returns true in any of your route functions.
-  },
-
-  data: function () {
-  },
-
-  action: function () {
-    this.render('Photos', { /* data: {} */});
-    Session.set('photo_list', photos);
-  }
+    action: function () {
+        this.render('Photos', { /* data: {} */ });
+        var photos = firstLookPhotoData.concat(ceremonyPhotoData);
+        photos.forEach(function (photo, index) {
+            photo.number = index;
+        });
+        Session.set('photo_list', photos);
+    }
 });
 
 PhotoController = RouteController.extend({
     action: function () {
         this.render('Photo', {});
-        Session.set('photo_list', photos);
         var params = this.params;
         var id = params.id;
         var data = {
-          id: id,
-          src: '/day-of/' + id + '.JPG',
-          number: params.number
-        }; 
+            id: id,
+            folder: params.folder,
+            src: id + '.jpg',
+            number: params.number
+        };
         Session.set('singlePhotoData', data);
     }
 });

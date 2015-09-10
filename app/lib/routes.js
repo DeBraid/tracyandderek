@@ -26,7 +26,7 @@ Router.route('photos', {
   where: 'client'
 });
 
-Router.route('photo/:number/:id', {
+Router.route('photo/:folder/:number/:id', {
   name: 'photo',
   controller: 'PhotoController',
   action: 'action',

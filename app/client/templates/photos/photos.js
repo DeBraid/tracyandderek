@@ -49,7 +49,8 @@ Template.Photos.events({
     'click .photo': function (e) {
         var id = e.target.id;
         var number = $(e.target).data('number');
-        Router.go('/photo/' + number + '/' + id);
+        var folder = $(e.target).data('folder');
+        Router.go('/photo/'+ folder + '/' + number + '/' + id);
     }
 });
 
